@@ -1,20 +1,23 @@
 // import { NavLink } from 'react-router-dom'
 import './style.css'
 import { IoIosSearch } from "react-icons/io";
-import { FaRegStar,FaRegUser } from "react-icons/fa";
+import { FaRegStar,FaRegUser,FaUserCircle } from "react-icons/fa";
 function Aside (){
-  const user = JSON.parse(localStorage.getItem('user'));
+  
+  const userString= localStorage.getItem('user');
+  const user = userString ? JSON.parse(userString) : null;
   
   return(
     <div className='aside'>
       <img className='aside-logo' src="src/images/you-tune-logo.png" alt="" />
       <ul className='menu-list'>
-        <li><IoIosSearch/>Pesquisar</li>
-        <li><FaRegStar/>Favoritas</li>
-        <li><FaRegUser/>Perfil</li>
+        <li><IoIosSearch style={{marginRight:'8px'}}/>Pesquisar</li>
+        <li><FaRegStar style={{marginRight:'8px'}}/>Favoritas</li>
+        <li><FaRegUser style={{marginRight:'8px'}}/>Perfil</li>
       </ul>
       <div className='aside-profile'>
         <img src="" alt="" />
+        <FaUserCircle style={{marginRight:'8px'}}/>
         <span>{user.name}</span>
       </div>
     </div>

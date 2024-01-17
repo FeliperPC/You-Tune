@@ -35,6 +35,7 @@
   border-radius: 5px;
   box-shadow: 0 0 5px #ffffff;
   cursor: pointer;
+  font-family: Poppins;
 }
 
 .form-login > button:disabled{
