@@ -1,13 +1,16 @@
 import { useEffect, useState } from "react"
 import { HtmlElementType } from "../../types"
 import { createUser } from "../../services/userAPI"
-import Loading from "./Loading"
+import Loading from "../Loading"
+import './style.css'
+import { useNavigate } from "react-router-dom"
 
 function Login() {
   const [username, setUsername] = useState<string>('')
   const [enable,setEnable]= useState(true)
   const [loading,setLoading] = useState(false)
   
+  const navigate = useNavigate()
 
   function handleChange(event : HtmlElementType){
     setUsername(event.target.value)
@@ -17,6 +20,7 @@ function Login() {
     setLoading(true)
     await createUser({name:username})
     setLoading(false)
+    navigate('/search')
   }
 
   useEffect(()=>{
@@ -29,14 +33,16 @@ function Login() {
 
 
   return(
-    <div className="login">
+    <div>
       {!loading ? 
-      <form>
-        <label> Digite seu nome : 
-          <input 
-            type="text" 
-            onChange={handleChange}/>
-        </label>
+      <div className="login">
+        <form className="form-login">
+          <h3>Qual seu nome ?</h3>
+        <input 
+          type="text" 
+          onChange={handleChange}
+          placeholder="..."
+          />
         <button 
           disabled={enable}
           onClick={saveUser}
@@ -44,6 +50,8 @@ function Login() {
           Entrar
         </button>
       </form>
+      <img src="src/images/you-tune-logo.png" alt="" />
+      </div>
       :
       <Loading />
       }

@@ -1,12 +1,19 @@
 import './App.css'
-import Login from './components/Login'
+import Home from './pages/Home'
+import Search from './pages/Search'
 import { Route,Routes } from 'react-router-dom'
 
 function App() {
   return (
     <div className='App'>
       <Routes>
-        <Route path='/' element={<Login/>}/>
+        <Route path='/' element={<Home/>}/>
+        <Route path='/search' element={<Search/>}/>
+        {/* <Route path='/album:id' element={<Album/>}/>
+        <Route path='/favorites' element={<Favorites/>}/>
+        <Route path='/profile' element={<Profile/>}/>
+        <Route path='/profile/edit' element={<ProfileEdit/>}/>
+        <Route path='/*' element={<NotFound/>}/> */}
       </Routes>
     </div>
   )
