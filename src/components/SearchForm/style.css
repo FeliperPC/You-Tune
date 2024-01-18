@@ -1,4 +1,4 @@
-.search-container{
+.search-top-bar{
   height: 20vh;
   width: 100%;
   display: flex;
@@ -22,6 +22,7 @@
 }
 .search-form > input:focus{
   outline: none;
+  box-shadow: 0 0 10px #FFF;
 }
 
 .search-form > button{
@@ -29,11 +30,48 @@
   height: 46px;
   background: black;
   font-size: 26px;
-  border-left-width: 0;
   padding: 7px 10px;
   border-radius: 0 20px 20px 0;
-  color:white
+  color:white;
+  box-shadow: 0 0 10px #FFF;
 }
 .search-form > button:disabled{
   color: rgb(23, 22, 22);
+  box-shadow: none;
+}
+
+.search-container{
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.main-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;  
+}
+.result-container{
+  display: flex;
+  /* border: 1px solid red; */
+  flex-direction: column;
+  align-items: center;
+}
+
+.albums-container{
+  display: flex;
+  flex-flow: row wrap;
+  height: 100%;
+  justify-content: center;
+}
+
+.album{
+  /* border: 1px solid green; */
+  width: 100px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
 }
