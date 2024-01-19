@@ -24,7 +24,7 @@ function SearchForm(){
       const data = await searchAlbumsAPI(searchInfo);
       if(data.length){
         setMessage(false)
-        setalbums([...albums,...data])
+        setalbums(data)
       } else {
         setMessage(true)
         setalbums([])
@@ -69,12 +69,14 @@ function SearchForm(){
         {albums.length>0 && 
         <div className="result-container">
           <h1>Resultados de {albums[0].artistName}</h1>
-          <div className="albums-container">
-            {albums.map((item)=>(
-              <div className="album">
-                <img src={item.artworkUrl100} alt={item.collectionName} />
-                <p>{item.collectionName}</p>
-                <p><em>{item.artistName}</em></p>
+          <div className="albums-list">
+            {albums.map((item,index)=>(
+              <div className="album" key={index}>
+                <img src={item.artworkUrl100} alt={item.collectionName}/>
+                <div className='album-info'>
+                  <p className='album-name'>{item.collectionName}</p>
+                  <p className='artist-name'>{item.artistName}</p>
+                </div>
               </div>
             ))}
           </div>
