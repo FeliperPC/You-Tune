@@ -3,8 +3,7 @@ import './style.css';
 import { IoIosSearch } from "react-icons/io";
 import { AlbumType, HtmlElementType } from '../../types';
 import searchAlbumsAPI from '../../services/searchAlbumsAPI';
-import Loading from '../Loading';
-import { PiSmileySadFill } from "react-icons/pi";
+import AlbumList from '../AlbumList';
 
 function SearchForm(){
   const [enableBtn,setEnableBtn] = useState(true);
@@ -20,6 +19,7 @@ function SearchForm(){
   async function handleClick() {
     setLoading(true);
     setMessage(false);
+    setalbums([])
     try{
       const data = await searchAlbumsAPI(searchInfo);
       if(data.length){
@@ -63,26 +63,11 @@ function SearchForm(){
       </div>
     </div>
     <div className='main-container'>
-      {loading && <Loading/>}
-      {message && <h2>Nenhum álbum foi encontrado <PiSmileySadFill/></h2>}
-      <div className='albums-container'>
-        {albums.length>0 && 
-        <div className="result-container">
-          <h1>Resultados de {albums[0].artistName}</h1>
-          <div className="albums-list">
-            {albums.map((item,index)=>(
-              <div className="album" key={index}>
-                <img src={item.artworkUrl100} alt={item.collectionName}/>
-                <div className='album-info'>
-                  <p className='album-name'>{item.collectionName}</p>
-                  <p className='artist-name'>{item.artistName}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-        }
-      </div>
+      <AlbumList 
+        loading={loading}
+        message={message}
+        albums={albums} 
+      />
     </div>
    </div> 
   )
