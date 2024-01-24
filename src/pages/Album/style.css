@@ -13,7 +13,7 @@
 .album-content{
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 90%;
 }
 
 .img-album{
@@ -28,4 +28,8 @@
   color: rgb(171, 169, 169);
   font-size: 12px;
   line-height: 2px;
+}
+.songs-container{
+  display: flex;
+  justify-content: center;
 }

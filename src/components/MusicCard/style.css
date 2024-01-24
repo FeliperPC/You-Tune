@@ -1,5 +1,25 @@
-.songList{
+.song-list{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  overflow-y: scroll;
+  width: 100%;
+}
+
+.song-box{
+  background: linear-gradient(to top, black, rgb(39, 39, 39));
+  border-radius: 20px;
+  padding: 20px;
+  color: white;
   display: flex;
   flex-direction: column;
-  border: 1px solid red;
+  align-items: center;
+  margin: 5px;
+}
+
+.title{
+  display: flex;
+  justify-content: center;
+  margin: 10px;
 }

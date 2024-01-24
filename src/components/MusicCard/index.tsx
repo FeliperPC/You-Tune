@@ -9,11 +9,13 @@ function MusicCard({songs}:MusicCardProps){
   console.log(songs);
   
   return(
-    <div className="songList">
+    <section>
+    <h1 className='title'>Músicas</h1>
+    <div className="song-list">
       {songs && 
         songs.map((item)=>(
           <div className="song-box" key={item.trackId}>
-          <p>{item.trackName}</p>
+          <p style={{marginBottom:'5px'}}>{item.trackName}</p>
           <audio className='song-card' src={item.previewUrl} controls>
             <track kind="audio/mp3" />
             O seu navegador não suporta o elemento{" "} <code>audio</code>.
@@ -22,6 +24,7 @@ function MusicCard({songs}:MusicCardProps){
         ))
       }
     </div>
+    </section>
   )
 }
 
