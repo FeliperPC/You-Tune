@@ -5,10 +5,12 @@ import { useEffect, useState } from "react"
 import getMusics from "../../services/musicsAPI"
 import { AlbumType, SongType } from "../../types"
 import MusicCard from "../../components/MusicCard"
+import Loading from "../../components/Loading"
 
 function Album(){
   const [album,setAlbum] = useState<[AlbumType, ...SongType[]]>()
   const [songs,setSongs] = useState<SongType[]>([])
+  const [loading,setLoading] = useState(false)
 
   const params = useParams()
   
@@ -19,7 +21,9 @@ function Album(){
     async function getSong () {
       try{
         if(params.id){ 
+          setLoading(true)
           const result = await getMusics(params.id)
+          setLoading(false)
           setAlbum(result)
         }
       } catch(error){
@@ -39,8 +43,7 @@ function Album(){
       }));
       setSongs(prevSongs)
     }    
-  },[album])
-  ;
+  },[album]);
   
   return(
     <div className="album-page">
@@ -56,6 +59,7 @@ function Album(){
         }
         </div>
         <div className="songs-container">
+        {loading && <Loading />}
           {songs && 
             <MusicCard 
               songs ={songs}

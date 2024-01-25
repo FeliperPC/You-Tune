@@ -29,7 +29,6 @@ function SearchForm(){
         setMessage(true)
         setalbums([])
       }
-      setSearchInfo('');
       setLoading(false);
     } catch(error){
       console.error('Erro ao carregar album')

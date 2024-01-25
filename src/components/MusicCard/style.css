@@ -9,6 +9,7 @@
 
 .song-box{
   background: linear-gradient(to top, black, rgb(39, 39, 39));
+  box-shadow: 0 0 10px #7c7b7b;
   border-radius: 20px;
   padding: 20px;
   color: white;
@@ -22,4 +23,13 @@
   display: flex;
   justify-content: center;
   margin: 10px;
+}
+.song-info{
+  display: flex;
+  justify-content: space-between;
+  width: 95%;
+  margin-bottom: 5px;
+}
+.checkbox{
+  display: none;
 }
