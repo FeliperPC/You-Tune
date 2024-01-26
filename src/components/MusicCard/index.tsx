@@ -1,29 +1,44 @@
 import './style.css'
 import { HtmlElementType, SongType } from '../../types'
 import { useEffect, useState } from 'react'
+import {addSong,removeSong,getFavoriteSongs} from '../../services/favoriteSongsAPI'
 
 type MusicCardProps ={
   songs : SongType[]
 }
 
 function MusicCard({songs}:MusicCardProps){  
-  const[favoriteList,setFavoriteList]=useState<SongType[]>([])
+  const [song,setSong] = useState<SongType>()
+  const [favSongList,setFavSong] = useState<SongType[]>([])
   
-  function handleChange(e:HtmlElementType){
-    const song = songs.find((item)=>item.trackName === e.target.name);
-    if(song){
-      if(!favoriteList.includes(song)) {
-        setFavoriteList([...favoriteList,song]) 
-      } else{
-        const updatedSongs = favoriteList.filter((item)=>item.trackName !== song.trackName)
-        setFavoriteList(updatedSongs)
-      }
-    }
+  
+  async function handleChange(e:HtmlElementType){
+    setSong(songs.find((item)=>item.trackName === e.target.name));
+    await getFavoritList()
+  }
+
+  async function getFavoritList(){
+    const updatedSongs = await getFavoriteSongs()
+    setFavSong(updatedSongs)
   }
 
   useEffect(()=>{
-    console.log(favoriteList);
-  },[favoriteList])
+    getFavoritList()
+  },[])  
+
+  useEffect(()=>{
+    async function handleSongChange() {
+      if(song){
+        if(favSongList.some((item)=>item.trackId===song.trackId)){
+          await removeSong(song)
+        } else{
+          await addSong(song)
+        }
+      }
+      getFavoritList()
+    }
+    handleSongChange()
+  },[song])
 
   return(
     <section>
@@ -36,7 +51,7 @@ function MusicCard({songs}:MusicCardProps){
             <p style={{marginBottom:'5px'}}>{item.trackName}</p>
             <label>
               <input className='checkbox' type="checkbox" name={item.trackName} onChange={handleChange}/>
-              {favoriteList.includes(item) ?
+              {favSongList.some((song)=>item.trackId===song.trackId) ?
                 <img src="../src/images/checked_heart.png" alt="favorito" />
                 :
                 <img src="../src/images/empty_heart.png" alt="favorito" />
