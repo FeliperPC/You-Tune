@@ -2,9 +2,14 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
+  width: 98%;
+  height: 74vh;
+  overflow-y: auto;
+}
+.songs-section{
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  overflow-y: scroll;
-  width: 100%;
 }
 
 .song-box{
@@ -14,9 +19,12 @@
   padding: 20px;
   color: white;
   display: flex;
+  justify-content: center;
   flex-direction: column;
   align-items: center;
   margin: 5px;
+  width: 320px;
+  height: 110px;
 }
 
 .title{
@@ -26,6 +34,7 @@
 }
 .song-info{
   display: flex;
+  flex-direction: row wrap;
   justify-content: space-between;
   width: 95%;
   margin-bottom: 5px;

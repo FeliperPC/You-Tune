@@ -22,7 +22,7 @@
   list-style-type: none;
   cursor: pointer;
 }
-.menu-list > li:hover{
+.on-page{
   scale: 1.2;
   font-weight: bold;
 }
