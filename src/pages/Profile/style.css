@@ -1,0 +1,43 @@
+.profile-page{
+  display: flex;
+}
+
+.profile-img{
+  border-radius: 50%;
+  width: 17%;
+  position:absolute;
+  top: 80px;
+  left: 450px;
+  box-shadow: 0 0 20px #000;
+}
+
+.profile-main{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.form-view{
+  width: 50%;
+  margin-left: 34%;
+  margin-top: 8%;
+}
+
+.edit-profile-btn{
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  border: 0 none;
+  cursor: pointer;
+  font-weight: bold;
+}
+.profile-data{
+  color: rgb(77, 77, 77);
+}
+
+.edit-profile-btn:hover{
+  
+  scale: 1.05;
+}

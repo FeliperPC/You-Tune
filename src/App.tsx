@@ -5,6 +5,7 @@ import Favorites from './pages/Favorites'
 import { Route,Routes } from 'react-router-dom'
 import Album from './pages/Album'
 import NotFound from './pages/NotFound'
+import Profile from './pages/Profile'
 
 function App() {
   return (
@@ -14,8 +15,8 @@ function App() {
         <Route path='/search' element={<Search/>}/>
         <Route path='/album/:id' element={<Album/>}/>
         <Route path='/favorites' element={<Favorites/>}/>
-        {/* <Route path='/profile' element={<Profile/>}/>
-        <Route path='/profile/edit' element={<ProfileEdit/>}/> */}
+        <Route path='/profile' element={<Profile/>}/>
+        {/* <Route path='/profile/edit' element={<ProfileEdit/>}/> */}
         <Route path='/*' element={<NotFound/>}/>
       </Routes>
     </div>
