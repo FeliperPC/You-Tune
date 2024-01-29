@@ -41,8 +41,6 @@ function MusicCard({songs}:MusicCardProps){
   },[song])
 
   return(
-    <section className='songs-section'>
-    <h1 className='title'>Músicas</h1>
     <div className="song-list">
       {songs && 
         songs.map((item)=>(
@@ -66,7 +64,6 @@ function MusicCard({songs}:MusicCardProps){
         ))
       }
     </div>
-    </section>
   )
 }
 

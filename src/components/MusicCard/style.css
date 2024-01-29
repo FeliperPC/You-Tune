@@ -2,16 +2,11 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  width: 98%;
-  height: 74vh;
+  height: 78vh;
   overflow-y: auto;
+  margin-top: 10px;
+  align-items: flex-start;
 }
-.songs-section{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 .song-box{
   background: linear-gradient(to top, black, rgb(39, 39, 39));
   box-shadow: 0 0 10px #7c7b7b;

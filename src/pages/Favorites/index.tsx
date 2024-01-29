@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react'
 import { SongType } from '../../types'
 import { getFavoriteSongs } from '../../services/favoriteSongsAPI'
 import MusicCard from '../../components/MusicCard'
+import ReturnButtom from '../../components/ReturnButtom'
 
 function Favorites() {
   const [loading,setLoading] = useState(false)
@@ -30,6 +31,7 @@ function Favorites() {
       <Aside/>
       <div className="fav-page-main">
         <div className="search-top-bar">
+          <ReturnButtom/>
           <h1 style={{color:'white'}}>Músicas Favoritas</h1>
         </div>
         <div className="songs-container">

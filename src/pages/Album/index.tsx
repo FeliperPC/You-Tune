@@ -6,6 +6,7 @@ import getMusics from "../../services/musicsAPI"
 import { AlbumType, SongType } from "../../types"
 import MusicCard from "../../components/MusicCard"
 import Loading from "../../components/Loading"
+import ReturnButtom from "../../components/ReturnButtom"
 
 function Album(){
   const [album,setAlbum] = useState<[AlbumType, ...SongType[]]>()
@@ -50,6 +51,7 @@ function Album(){
       <Aside />
       <div className="album-content">
         <div className="album-header">
+        <ReturnButtom/>
         <img className='img-album' src={state.albumImg} alt="" />
         {album && 
           <div className="header-info">
