@@ -1,0 +1,36 @@
+.profile-edit-page{
+  display: flex;
+}
+
+.edit-profile-main{
+  width: 100%;
+}
+
+#img-input{
+  position :absolute;
+  left: 515px;
+  top: 430px;
+}
+.edit-form-input{
+  border: none;
+  border-bottom: 1px solid black;
+  margin-top: 5px;
+  color: rgb(77, 77, 77);
+}
+.edit-form-input:focus{
+  outline: none;
+}
+
+.form-view .edit-form-input{
+  width: 350px;
+}
+
+.label-container{
+  margin: 20px 0px;
+}
+.edit-profile-btn:disabled{
+  background-color: rgb(189, 186, 186);
+  scale: none;
+  cursor: auto;
+  border: 2px solid rgb(224, 218, 218);
+}

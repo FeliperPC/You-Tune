@@ -45,7 +45,7 @@ function SearchForm(){
 
   return(
   <div className='search-container'>
-    <div className="search-top-bar">
+    <div className="top-bar">
       <div className='search-form'>
         <input 
           type="text" 

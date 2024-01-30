@@ -30,7 +30,7 @@ function Favorites() {
     <div className="favorite-page">
       <Aside/>
       <div className="fav-page-main">
-        <div className="search-top-bar">
+        <div className="top-bar">
           <ReturnButtom/>
           <h1 style={{color:'white'}}>Músicas Favoritas</h1>
         </div>

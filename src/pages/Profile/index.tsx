@@ -26,7 +26,7 @@ function Profile(){
     <div className="profile-page">
       <Aside />
       <div className='profile-main'>
-        <div className="search-top-bar">
+        <div className="top-bar">
           <ReturnButtom/>
         </div>
         <div className="profile-main">

@@ -21,6 +21,7 @@
   width: 50%;
   margin-left: 34%;
   margin-top: 8%;
+  height: 50vh;
 }
 
 .edit-profile-btn{
@@ -35,9 +36,10 @@
 }
 .profile-data{
   color: rgb(77, 77, 77);
+  font-size: 15px;
 }
 
 .edit-profile-btn:hover{
-  
   scale: 1.05;
 }
+
