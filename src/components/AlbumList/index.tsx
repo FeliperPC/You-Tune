@@ -14,7 +14,9 @@ function AlbumList({loading, message,albums} : AlbumListProps) {
   const navigate = useNavigate()
   if(loading){
     return(
-      <Loading/>
+      <div style={{color:'black'}}>
+        <Loading/>
+      </div>
     )
   }
   if(message){

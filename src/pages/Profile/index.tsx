@@ -11,6 +11,7 @@ function Profile(){
   const navigate = useNavigate()
   const [userInfo,setUserInfo] = useState<UserType>()
   const [loading,setLoading] = useState(false)
+  const [isImgValid,setIsImgValid] = useState(true)
 
   useEffect(()=>{
     async function getUserInfo(){
@@ -22,7 +23,10 @@ function Profile(){
     getUserInfo()
   },[])
 
-  console.log(userInfo?.image )
+  function handleError(){
+    setIsImgValid(false)
+  }
+
   return(
     <div className="profile-page">
       <Aside />
@@ -32,11 +36,13 @@ function Profile(){
         </div>
         <div className="profile-main">
           {loading ?
+          <div className="loading-center">
             <Loading />
+          </div>
             :
           <div>
-            {userInfo?.image !== '' ?          
-              <img className='profile-img' src={userInfo?.image} alt="" />
+            {isImgValid ?          
+              <img className='profile-img' src={userInfo?.image} onError={handleError} />
               :
               <img className='profile-img' 
                 src='https://i0.wp.com/digitalhealthskills.com/wp-content/uploads/2022/11/fd35c-no-user-image-icon-27.png?fit=500%2C500&ssl=1' alt="" 

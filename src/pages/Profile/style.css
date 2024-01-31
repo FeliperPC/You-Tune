@@ -27,10 +27,10 @@
 .edit-profile-btn{
   margin-top: 10px;
   padding: 10px 20px;
-  background-color: black;
-  color: white;
+  background-color: white;
+  color: black;
   border-radius: 5px;
-  border: 0 none;
+  border: 1px solid black;
   cursor: pointer;
   font-weight: bold;
 }
@@ -40,6 +40,6 @@
 }
 
 .edit-profile-btn:hover{
-  scale: 1.05;
+  background-color: black;
+  color: white;
 }
-

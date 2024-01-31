@@ -1,17 +1,23 @@
 .return-btn{
-  cursor:pointer;
   display: flex;
   align-items: center;
 }
 
 .return-container:hover{
   box-shadow: 0 0 10px #FFF;
+  cursor:pointer;
+  color: rgb(255, 255, 255);
+  scale: 1.1;
 }
 .return-container{
-  background-color: white;
+  background-color: black;
   border-radius: 5px;
-  padding: 5px;
+  padding: 10px;
   position: absolute;
   left: 0;
   margin-left: 300px;
+  color: rgb(179, 177, 177);
+  box-shadow: 0 0 10px #000;
+  font-size: 15px;
+  font-weight: bold;
 }

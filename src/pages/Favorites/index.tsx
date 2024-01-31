@@ -17,9 +17,12 @@ function Favorites() {
   }
 
   useEffect(()=>{
-    setLoading(true)
-    getSongsFromAPI()
-    setLoading(false)
+    async function onLoadPage(){
+      setLoading(true)
+      await getSongsFromAPI()
+      setLoading(false)
+    }
+    onLoadPage()
   },[])
 
   useEffect(()=>{
@@ -35,7 +38,11 @@ function Favorites() {
           <h1 style={{color:'white'}}>Músicas Favoritas</h1>
         </div>
         <div className="songs-container">
-        {loading && <Loading />}
+        {loading && 
+          <div className="loading-center">
+            <Loading />
+          </div>
+        }
           {songs && 
             <MusicCard 
               songs ={songs}

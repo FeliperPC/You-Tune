@@ -5,28 +5,26 @@ import { UserType } from '../../types'
 import { useEffect, useState} from 'react'
 import { getUser, updateUser } from '../../services/userAPI'
 import { useNavigate } from 'react-router-dom'
+import Loading from '../../components/Loading'
 
 function ProfileEdit(){
   const [userInfo,setUserInfo] = useState<UserType>({})
   const [isDisabled,setDisable]=useState(true)
-  const [isImgValid,setIsImgValid] = useState(false)
+  const [loading, setLoading] = useState(false)
   
   const navigate = useNavigate()
   
   useEffect(()=>{
     async function getUserData(){
+      setLoading(true)
       const data = await getUser()
+      setLoading(false)
       if(data) setUserInfo(data)
     }
     getUserData()
   },[])
   
   function handleChange(value:string, key: keyof UserType){      
-    if(!isImgValid) {
-      setUserInfo((prev)=>({
-        ...prev,image: 'https://i0.wp.com/digitalhealthskills.com/wp-content/uploads/2022/11/fd35c-no-user-image-icon-27.png?fit=500%2C500&ssl=1'
-      }))   
-    }
     setUserInfo((prev)=>({
       ...prev,[key]:value
     }))    
@@ -47,12 +45,6 @@ function ProfileEdit(){
     }
   },[userInfo])
 
-  function handleError(){
-    setIsImgValid(false)    
-  }
-  function handleLoad(){
-    setIsImgValid(true)
-  }
   return(
     <div className="profile-edit-page">
       <Aside/>
@@ -60,8 +52,14 @@ function ProfileEdit(){
         <div className="top-bar">
           <ReturnButtom/>
         </div>
+        {loading ? 
+        <div className="loading-center">
+          <Loading />
+        </div>
+        :
+        <div>
           {userInfo.image ?
-            <img className='profile-img' src={userInfo.image} onError={handleError} onLoad={handleLoad}/>
+            <img className='profile-img' src={userInfo.image} />
             :
             <img className='profile-img' 
               src='https://i0.wp.com/digitalhealthskills.com/wp-content/uploads/2022/11/fd35c-no-user-image-icon-27.png?fit=500%2C500&ssl=1' alt="" 
@@ -110,6 +108,8 @@ function ProfileEdit(){
               >Enviar
             </button>
           </form>
+      </div>
+        }
       </div>
     </div>
   )

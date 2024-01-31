@@ -61,7 +61,11 @@ function Album(){
         }
         </div>
         <div className="songs-container">
-        {loading && <Loading />}
+        {loading && 
+          <div className="loading-center">
+            <Loading />
+          </div>
+        }
           {songs && 
             <MusicCard 
               songs ={songs}

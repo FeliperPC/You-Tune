@@ -53,7 +53,9 @@ function Login() {
       <img src="src/images/you-tune-logo.png" alt="" />
       </div>
       :
-      <Loading />
+      <div style={{color:'white'}}>
+        <Loading />
+      </div>
       }
     </div>
   )
