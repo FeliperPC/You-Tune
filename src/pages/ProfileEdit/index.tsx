@@ -7,8 +7,9 @@ import { getUser, updateUser } from '../../services/userAPI'
 import { useNavigate } from 'react-router-dom'
 
 function ProfileEdit(){
-  const [userInfo,setUserInfo] = useState<UserType>()
+  const [userInfo,setUserInfo] = useState<UserType>({})
   const [isDisabled,setDisable]=useState(true)
+  const [isImgValid,setIsImgValid] = useState(false)
   
   const navigate = useNavigate()
   
@@ -20,7 +21,12 @@ function ProfileEdit(){
     getUserData()
   },[])
   
-  function handleChange(value:string, key: keyof UserType){  
+  function handleChange(value:string, key: keyof UserType){      
+    if(!isImgValid) {
+      setUserInfo((prev)=>({
+        ...prev,image: 'https://i0.wp.com/digitalhealthskills.com/wp-content/uploads/2022/11/fd35c-no-user-image-icon-27.png?fit=500%2C500&ssl=1'
+      }))   
+    }
     setUserInfo((prev)=>({
       ...prev,[key]:value
     }))    
@@ -40,6 +46,13 @@ function ProfileEdit(){
       }
     }
   },[userInfo])
+
+  function handleError(){
+    setIsImgValid(false)    
+  }
+  function handleLoad(){
+    setIsImgValid(true)
+  }
   return(
     <div className="profile-edit-page">
       <Aside/>
@@ -47,8 +60,8 @@ function ProfileEdit(){
         <div className="top-bar">
           <ReturnButtom/>
         </div>
-          {userInfo?.image ?
-            <img className='profile-img' src={userInfo.image} alt="" />
+          {userInfo.image ?
+            <img className='profile-img' src={userInfo.image} onError={handleError} onLoad={handleLoad}/>
             :
             <img className='profile-img' 
               src='https://i0.wp.com/digitalhealthskills.com/wp-content/uploads/2022/11/fd35c-no-user-image-icon-27.png?fit=500%2C500&ssl=1' alt="" 
@@ -59,7 +72,7 @@ function ProfileEdit(){
             type="text" 
             className='edit-form-input' 
             id='img-input' onChange={({target})=>handleChange(target.value,'image')}
-            value={userInfo?.image}
+            value={userInfo.image}
           />
           <form className='form-view'>
             <div className='label-container'>
@@ -68,7 +81,7 @@ function ProfileEdit(){
               <input type="text" 
                 className='edit-form-input' 
                 onChange={({target})=>handleChange(target.value,'name')}
-                value={userInfo?.name}
+                value={userInfo.name}
               />
             </div>
             <div className='label-container'>
@@ -77,7 +90,7 @@ function ProfileEdit(){
               <input type="text" 
                 className='edit-form-input' 
                 onChange={({target})=>handleChange(target.value,'email')}
-                value={userInfo?.email}
+                value={userInfo.email}
               />
             </div>
             <div className='label-container'>
@@ -86,7 +99,7 @@ function ProfileEdit(){
               <input type="text" 
                 className='edit-form-input' 
                 onChange={({target})=>handleChange(target.value,'description')}
-                value={userInfo?.description}
+                value={userInfo.description}
               />
             </div>
             <br />  

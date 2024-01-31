@@ -15,16 +15,16 @@ function SearchForm(){
   function handleChange(event : HtmlElementType){
     setSearchInfo(event.target.value);
   }
-
-  async function handleClick() {
+  async function getDataFromApi(info : string){
     setLoading(true);
     setMessage(false);
     setalbums([])
     try{
-      const data = await searchAlbumsAPI(searchInfo);
+      const data = await searchAlbumsAPI(info);
       if(data.length){
         setMessage(false)
         setalbums(data)
+        localStorage.setItem('search',info)
       } else {
         setMessage(true)
         setalbums([])
@@ -35,6 +35,10 @@ function SearchForm(){
     }
   }
 
+  async function handleClick() {
+    await getDataFromApi(searchInfo)
+  }
+
   useEffect(()=>{
     if(searchInfo.length>2){
       setEnableBtn(false)
@@ -42,6 +46,12 @@ function SearchForm(){
       setEnableBtn(true)
     }
   },[searchInfo])
+
+  useEffect(()=>{
+    const search = localStorage.getItem('search')
+    search && getDataFromApi(search)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[])
 
   return(
   <div className='search-container'>

@@ -22,6 +22,7 @@ function Profile(){
     getUserInfo()
   },[])
 
+  console.log(userInfo?.image )
   return(
     <div className="profile-page">
       <Aside />
@@ -34,7 +35,7 @@ function Profile(){
             <Loading />
             :
           <div>
-            {userInfo?.image ?
+            {userInfo?.image !== '' ?          
               <img className='profile-img' src={userInfo?.image} alt="" />
               :
               <img className='profile-img' 
