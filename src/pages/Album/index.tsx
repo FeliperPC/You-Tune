@@ -35,15 +35,16 @@ function Album(){
   },[params])
 
   useEffect(()=>{
-    const songsList = album?.slice(1)
-    if(songsList){
-      const prevSongs: SongType[] = songsList.map((song) => ({
+      const songsList = album?.slice(1)
+      if(songsList){
+      const songsArray : SongType[] = songsList.filter((item): item is SongType => 'trackId' in item &&
+       'trackName' in item && 'previewUrl' in item).map(song=>({
         trackId: song.trackId,
         trackName: song.trackName,
-        previewUrl: song.previewUrl
-      }));
-      setSongs(prevSongs)
-    }    
+        previewUrl: song.previewUrl,
+       }))
+      setSongs(songsArray)
+      }    
   },[album]);
   
   return(

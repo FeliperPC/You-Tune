@@ -38,6 +38,7 @@ function MusicCard({songs}:MusicCardProps){
       getFavoritList()
     }
     handleSongChange()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   },[song])
 
   return(
