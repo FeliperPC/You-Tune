@@ -11,6 +11,7 @@ type AlbumListProps ={
 }
 
 function AlbumList({loading, message,albums} : AlbumListProps) {
+  const artistName = localStorage.getItem('search')
   const navigate = useNavigate()
   if(loading){
     return(
@@ -33,7 +34,7 @@ function AlbumList({loading, message,albums} : AlbumListProps) {
       <div className='albums-container'>
         {albums.length>0 && 
         <div className="result-container">
-          <h1>Resultados de {albums[0].artistName}</h1>
+          <h1>Resultados de {artistName}</h1>
           <div className="albums-list">
             {albums.map((item,index)=>(
               <div className="album" key={index} onClick={()=>handleClick(item.collectionId,item.artworkUrl100)}>

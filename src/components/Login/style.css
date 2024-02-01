@@ -19,6 +19,7 @@
 }
 .form-login > input {
   border: transparent;
+  border-bottom: 1px solid rgb(161, 161, 161);
   padding: 10px 0 ;
   border-radius: 5px;
   width: 80%;
