@@ -8,7 +8,12 @@ import { useNavigate } from 'react-router-dom'
 import Loading from '../../components/Loading'
 
 function ProfileEdit(){
-  const [userInfo,setUserInfo] = useState<UserType>({})
+  const [userInfo,setUserInfo] = useState<UserType>({
+    name: '',
+    description:'',
+    email:'',
+    image:''
+  })
   const [isDisabled,setDisable]=useState(true)
   const [loading, setLoading] = useState(false)
   
