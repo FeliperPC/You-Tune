@@ -2,6 +2,8 @@ import './style.css'
 import { HtmlElementType, SongType } from '../../types'
 import { useEffect, useState } from 'react'
 import {addSong,removeSong,getFavoriteSongs} from '../../services/favoriteSongsAPI'
+import heart from '../../images/checked_heart.png'
+import emptyHeart from '../../images/empty_heart.png'
 
 type MusicCardProps ={
   songs : SongType[]
@@ -51,9 +53,9 @@ function MusicCard({songs}:MusicCardProps){
             <label>
               <input className='checkbox' type="checkbox" name={item.trackName} onChange={handleChange}/>
               {favSongList.some((song)=>item.trackId===song.trackId) ?
-                <img src="../src/images/checked_heart.png" alt="favorito" />
+                <img src={heart} alt="favorito" />
                 :
-                <img src="../src/images/empty_heart.png" alt="favorito" />
+                <img src={emptyHeart} alt="favorito" />
               }
             </label>
           </div>

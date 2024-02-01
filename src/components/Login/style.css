@@ -7,6 +7,7 @@
   width: 600px;
   box-shadow: 0 0 10px #ffffff;
   color : white;
+  background: linear-gradient(to top, black, rgb(39, 39, 39));
 }
 
 .form-login{
@@ -17,23 +18,24 @@
   margin-top:10px;
 }
 .form-login > input {
-  border: 1px solid black;
+  border: transparent;
   padding: 10px 0 ;
   border-radius: 5px;
   width: 80%;
-  background-color: black;
+  background-color: transparent;
   color: white;
   outline: none;
 }
 
 .form-login > button{
   margin-top: 10px;
-  background-color: white;
-  color: black;
+  background-color: black;
+  color: white;
   padding: 5px;
   width: 30%;
   border-radius: 5px;
   box-shadow: 0 0 5px #ffffff;
+  font-weight: bold;
   cursor: pointer;
   font-family: Poppins;
 }
@@ -41,11 +43,17 @@
 .form-login > button:disabled{
   font-weight: lighter;
   box-shadow : none;
-  background-color: black;
-  color: rgb(23, 22, 22);
+  background-color: transparent;
   cursor: auto;
+  width: 0px;
+  padding: 0px;
+  font-size: 0px;
+}
+.form-login > button:hover{
+  background-color: white;
+  color: black;
 }
 
-.login > img{
+.login-logo{
   width: 200px;
 }

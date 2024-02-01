@@ -4,6 +4,7 @@ import { createUser } from "../../services/userAPI"
 import Loading from "../Loading"
 import './style.css'
 import { useNavigate } from "react-router-dom"
+import Logo from '../../images/you-tune-logo.png'
 
 function Login() {
   const [username, setUsername] = useState<string>('')
@@ -41,7 +42,7 @@ function Login() {
         <input 
           type="text" 
           onChange={handleChange}
-          placeholder="..."
+          placeholder=". . ."
           />
         <button 
           disabled={enable}
@@ -50,7 +51,11 @@ function Login() {
           Entrar
         </button>
       </form>
-      <img src="src/images/you-tune-logo.png" alt="" />
+        <img 
+          className='login-logo' 
+          src={Logo} 
+          alt="you-tune-logo" 
+        />
       </div>
       :
       <div style={{color:'white'}}>
