@@ -50,3 +50,11 @@
 .loading-black{
   color: black;
 }
+
+@media screen and (max-width:450px){
+  .albums-container{
+    height: 100vh;
+    overflow-y: none;
+  }
+  
+}

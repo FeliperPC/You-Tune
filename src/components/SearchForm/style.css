@@ -67,7 +67,7 @@
     border-right: none;
   }
   .search-form>button{
-    height: 32px;
+    height: 30px;
     align-items: center;
     font-size: 18px;
     box-shadow: none;
@@ -80,6 +80,12 @@
     border: none;
     height: 30px;
     border-right: 1px solid black;
+  }
+  .main-container{
+    font-size: 12px;
+    align-items: flex-start;
+    padding: 10px 0px;
+
   }
 }
 
