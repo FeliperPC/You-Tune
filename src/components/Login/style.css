@@ -8,6 +8,7 @@
   box-shadow: 0 0 10px #ffffff;
   color : white;
   background: linear-gradient(to top, black, rgb(39, 39, 39));
+  z-index: 2;
 }
 
 .form-login{
@@ -16,6 +17,8 @@
   height: 10vh;
   width: 100%;
   margin-top:10px;
+  position: relative;
+  z-index: 1;
 }
 .form-login > input {
   border: transparent;
@@ -57,4 +60,36 @@
 
 .login-logo{
   width: 200px;
+}
+
+@media screen and (max-width:450px){
+  .login{
+    width: 65%;
+    height: 40vh;
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
+  .form-login{
+    justify-content: center;
+    align-items: center;
+  }
+  .form-login > input{
+    width: 78%;
+  }
+  .form-login>h3{
+    margin-top: 25px;
+  }
+  .form-login > button{
+    margin-top: 25px;
+  }
+  .login-logo{
+    margin-bottom: 20px;
+  }
+  .login-logo:active{
+    background-color: white;
+    color: black;
+  }
+  .form-login > button{
+    width: 78%;
+  }
 }

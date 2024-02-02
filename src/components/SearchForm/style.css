@@ -55,4 +55,31 @@
   height: 100vh;
 }
 
+@media screen and (max-width:450px) {
+  .top-bar{
+    height: 7vh;
+  }
+  .search-form{
+    width: 90%;
+  }
+  .search-form>input{
+    height: 5px;
+    border-right: none;
+  }
+  .search-form>button{
+    height: 32px;
+    align-items: center;
+    font-size: 18px;
+    box-shadow: none;
+  }
+  .search-form>input:focus{
+    box-shadow: 0 0 10px #000;
+  }
+  .search-form > button:disabled{
+    background-color: white;
+    border: none;
+    height: 30px;
+    border-right: 1px solid black;
+  }
+}
 

@@ -51,7 +51,7 @@ function Login() {
           Entrar
         </button>
       </form>
-        <img 
+      <img 
           className='login-logo' 
           src={Logo} 
           alt="you-tune-logo" 

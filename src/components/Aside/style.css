@@ -46,3 +46,26 @@
   border-radius: 50%;
   margin-right: 10px;
 }
+
+@media screen and (max-width:450px){
+  .aside{
+    width: 100%;
+    flex-direction: row;
+    height: 8vh;
+    justify-content: space-between;
+  }
+  .aside-logo{
+    width: 150px;
+    margin-left: 15px;
+  }
+  .menu-list{
+    font-size: 20px;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 10px;
+  }
+  .aside-logo:hover{
+    box-shadow: none;
+    scale: none;
+  }
+}
