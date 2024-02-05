@@ -41,3 +41,27 @@
   justify-content: center;
   height: 75vh;
 }
+
+@media screen and (max-width:450px){
+  .profile-edit-page{
+    flex-direction: column;
+  }
+  #img-input{
+    left: 10px;
+    top: 500px;
+  }
+  .form-view{
+    margin-top: 30px;
+  }
+  .profile-img{
+    position: relative;
+    left: 37%;
+    top: 20px;
+  }
+  #img-input{
+    position: relative;
+    top: 10px;
+    left: 31%;
+    margin-top: 20px;
+  }
+}

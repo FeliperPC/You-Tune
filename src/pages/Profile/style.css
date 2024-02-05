@@ -53,12 +53,21 @@
     margin-top: 8%;
   }
   .profile-img{
-    border-radius: 50%;
-    position: absolute;
     top: 200px;
     left: 55%;
     width: 30%;
-    box-shadow: 0 0 20px #000;
+  }
+  .edit-profile-btn:hover{
+    background-color: none;
+    color: none;
+  }
+  .edit-profile-btn{
+    background-color:black;
+    color: white;
+    font-size: 10px;
+  }
+  .form-view>div>h2{
+    font-size: 18px;
   }
 
 }

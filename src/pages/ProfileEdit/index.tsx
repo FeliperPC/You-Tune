@@ -18,6 +18,7 @@ function ProfileEdit(){
   const [loading, setLoading] = useState(false)
   
   const navigate = useNavigate()
+  const isMobile = window.innerWidth <= 450;
   
   useEffect(()=>{
     async function getUserData(){
@@ -55,6 +56,7 @@ function ProfileEdit(){
       <Aside/>
       <div className="edit-profile-main">
         <div className="top-bar">
+          {isMobile && <h1 style={{color:'white'}}>Editar Perfil</h1>}
           <ReturnButtom/>
         </div>
         {loading ? 
@@ -76,6 +78,7 @@ function ProfileEdit(){
             className='edit-form-input' 
             id='img-input' onChange={({target})=>handleChange(target.value,'image')}
             value={userInfo.image}
+            placeholder='insira o link da sua imagem'
           />
           <form className='form-view'>
             <div className='label-container'>
