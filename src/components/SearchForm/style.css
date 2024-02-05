@@ -85,7 +85,9 @@
     font-size: 12px;
     align-items: flex-start;
     padding: 10px 0px;
-
+  }
+  .search-container{
+    height: 90vh;
   }
 }
 

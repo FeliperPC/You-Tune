@@ -53,8 +53,19 @@
 
 @media screen and (max-width:450px){
   .albums-container{
-    height: 100vh;
-    overflow-y: none;
+    height: 80vh;
   }
+  .album{
+    height: 80px;
+  }
+  .album > img{
+    width: 80px;
+  }
+  .album:hover{
+    scale: none;
+    cursor: none;
+  }
+  
+
   
 }

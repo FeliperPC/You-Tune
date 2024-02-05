@@ -37,3 +37,20 @@
   display: flex;
   align-items: center;
 }
+
+@media screen and (max-width:450px){
+  .album-page{
+    flex-direction: column;
+  }
+  .album-header{
+    height: 12vh;
+  }
+  .header-info{
+    font-size: 10px;
+    margin-right: 10px;
+  }
+  .img-album{
+    width: 70px;
+    margin-left: 10px;
+  }
+}

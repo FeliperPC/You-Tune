@@ -36,3 +36,9 @@
 .checkbox{
   display: none;
 }
+
+@media screen and (max-width:450px){
+  .song-box{
+    height: 80px;
+  }
+}
