@@ -58,6 +58,7 @@
 @media screen and (max-width:450px) {
   .top-bar{
     height: 7vh;
+    font-size: 12px;
   }
   .search-form{
     width: 90%;
@@ -87,7 +88,7 @@
     padding: 10px 0px;
   }
   .search-container{
-    height: 90vh;
+    height: 85vh;
   }
 }
 

@@ -12,6 +12,7 @@ function Profile(){
   const [userInfo,setUserInfo] = useState<UserType>()
   const [loading,setLoading] = useState(false)
   const [isImgValid,setIsImgValid] = useState(true)
+  const isMobile = window.innerWidth <= 450;
 
   useEffect(()=>{
     async function getUserInfo(){
@@ -32,6 +33,7 @@ function Profile(){
       <Aside />
       <div className='profile-main'>
         <div className="top-bar">
+          {isMobile && <h1 style={{color:'white'}}>Perfil</h1>}
           <ReturnButtom/>
         </div>
         <div className="profile-main">

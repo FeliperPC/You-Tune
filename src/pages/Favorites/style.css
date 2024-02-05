@@ -7,3 +7,12 @@
   flex-direction: column;
   width: 100%;
 }
+
+@media screen and (max-width:450px){
+  .favorite-page{
+    flex-direction: column;
+  }
+  .favorite-page>h1{
+    font-size: 24px;
+  }
+}
