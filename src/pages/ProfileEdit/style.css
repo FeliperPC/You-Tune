@@ -42,6 +42,7 @@
   height: 75vh;
 }
 
+
 @media screen and (max-width:450px){
   .profile-edit-page{
     flex-direction: column;
@@ -51,7 +52,7 @@
     top: 500px;
   }
   .form-view{
-    margin-top: 30px;
+    margin-top: 65px;
   }
   .profile-img{
     position: relative;
@@ -60,8 +61,8 @@
   }
   #img-input{
     position: relative;
-    top: 10px;
-    left: 129px;
+    top: 55px;
+    left: 6px;
     margin-top: 20px;
   }
 }
