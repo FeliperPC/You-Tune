@@ -72,7 +72,6 @@ function ProfileEdit(){
               src='https://i0.wp.com/digitalhealthskills.com/wp-content/uploads/2022/11/fd35c-no-user-image-icon-27.png?fit=500%2C500&ssl=1' alt="" 
             />
           }
-          <img className='profile-img'/>
           <input 
             type="text" 
             className='edit-form-input' 
